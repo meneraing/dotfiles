@@ -54,3 +54,8 @@ alias games="cd /mnt/Games/"
 
 # Shell integrations
 eval "$(fzf --zsh)"
+
+# Keybindings
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
+bindkey "^[[3~" delete-char
