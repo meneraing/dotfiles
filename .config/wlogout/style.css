@@ -7,7 +7,7 @@
 }
 
 window {
-	background-color: rgba(120, 120, 120, 0.8);
+	background-color: rgba(12, 12, 12, 0.8);
 }
 
 button {
@@ -18,19 +18,18 @@ button {
 
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: 25%;
+	background-size: 20%;
 
-	background-color: rgba(120, 120, 120, 0.8);
+	background-color: rgba(12, 12, 12, 0.8);
 	border: 3px solid #FFFFFF;
 
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0, rgba(0, 0, 0, 0.19):
 }
 
 button:focus,
 button:active,
 button:hover {
     color: @color11;
-	background-color: rgba(120, 120, 120, 0.5);
+	background-color: rgba(12, 12, 12, 0.5);
 	border: 3px solid @color11;
 }
 
