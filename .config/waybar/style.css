@@ -1,0 +1,152 @@
+/* Import pywal generated colorscheme */
+@import "../../.cache/wal/colors-waybar.css";
+
+* {
+border: none;
+font-family: "JetBrainsMono Nerd Font";
+font-weight: bold;
+font-size: 14px;
+}
+
+window#waybar {
+   background: alpha(@background, 0.3);
+/*   background-color: rgba(30, 30, 46, 0.5); */
+   border-radius: 0px;
+}
+
+window#waybar.empty #window {
+  background-color:transparent;
+}
+
+#window {
+padding-left: 10px;
+padding-right: 10px;
+border-radius: 0px;
+transition: none;
+background: alpha(@background, 0.1);
+color: lighter(@color6);
+}
+
+tooltip {
+  background: @background;
+  color: @color6;
+  border-radius: 10px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: @color6;
+}
+
+tooltip label {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#workspaces {
+margin: 0px 5px 0px 5px;
+border-radius: 10px;
+transition: none;
+padding-left: 0px;
+padding-right: 0px;
+color: @background;
+background: @color6;
+}
+
+/* Inactive workspace */
+#workspaces button {
+transition: none;
+color: @color8;
+background: transparent;
+}
+
+#workspaces button.persistent {
+transition: none;
+/* color: #aca1cf; */
+background: transparent;
+}
+
+#workspaces button.empty {
+transition: none;
+color: @color8;
+background: transparent;
+}
+
+#workspaces button.active {
+transition: none;
+color: @color0;
+background: transparent;
+}
+
+#temperature {
+color: @background;
+background: @color6;
+padding-left: 10px;
+padding-right: 10px;
+border-radius: 20px;
+}
+
+#temperature.critical {
+color: #ff0000;
+padding-left: 10px;
+padding-right: 10px;
+}
+
+#pulseaudio {
+padding-left: 10px;
+padding-right: 10px;
+border-radius: 20px;
+font-weight: bold;
+transition: none;
+color: @background;
+background: @color6;
+}
+
+#tray {
+padding-left: 10px;
+padding-right: 10px;
+border-radius: 20px;
+transition: none;
+font-weight: bold;
+color: @background;
+background: transparent;
+}
+
+#network {
+padding-left: 10px;
+padding-right: 10px;
+border-radius: 20px;
+color: @background;
+background: @color6;
+}
+
+#clock {
+padding-left: 10px;
+padding-right: 10px;
+border-radius: 20px;
+transition: none;
+font-weight: bold;
+color: @background;
+background: @color6;
+}
+
+#custom-power {
+/* margin: 0px 5px 0px 5px; */
+padding-left: 10px;
+padding-right: 14px;
+border-radius: 0px;
+transition: none;
+font-weight: bold;
+color: @background;
+background: @color6;
+}
+
+#custom-space {
+margin-left: 8px;
+padding-left: 10px;
+padding-right: 10px;
+margin-right: 8px;
+border-radius: 18px;
+transition: none;
+font-weight: bold;
+color: @background;
+background: @color6;
+}
