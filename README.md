@@ -1,21 +1,30 @@
 # My dotfiles
 
-This directory contains the dotfiles for my system
+This repository contains the dotfiles for my system and acts as a backup just in case.
 
 ## Requirements
 
-Ensure you have the following installed on your system
+If you want to use these configurations, ensure you have the following installed on your system:
+(Instructions for Arch based distros provided below)
 
 ### Git
 
 ```
-pacman -S git
+sudo pacman -S git
 ```
 
 ### Stow
 
 ```
-pacman -S stow
+sudo pacman -S stow
+```
+### Other packages
+
+```
+sudo pacman -S hyprland waybar wlogout alacritty wl-clipboard sddm thunar swww pkgfile
+```
+```
+paru -S waypaper clipse
 ```
 
 ## Installation
