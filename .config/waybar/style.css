@@ -24,12 +24,12 @@ padding-right: 10px;
 border-radius: 0px;
 transition: none;
 background: alpha(@background, 0.1);
-color: lighter(@color6);
+color: lighter(@color7);
 }
 
 tooltip {
-  background: @background;
-  color: @color6;
+  background: @color7;
+  color: @color0;
   border-radius: 10px;
   border-width: 2px;
   border-style: solid;
@@ -39,6 +39,7 @@ tooltip {
 tooltip label {
   font-size: 14px;
   font-weight: bold;
+  color: @color0;
 }
 
 #workspaces {
@@ -47,8 +48,7 @@ border-radius: 10px;
 transition: none;
 padding-left: 0px;
 padding-right: 0px;
-color: @background;
-background: @color6;
+background: @color7;
 }
 
 /* Inactive workspace */
@@ -76,28 +76,23 @@ color: @color0;
 background: transparent;
 }
 
-#temperature {
-color: @background;
-background: @color6;
+#temperature,
+#pulseaudio,
+#network,
+#clock {
+transition: none;
+font-weight: bold;
 padding-left: 10px;
 padding-right: 10px;
-border-radius: 20px;
+border-radius: 10px;
+color: @background;
+background: @color7;
 }
 
 #temperature.critical {
 color: #ff0000;
 padding-left: 10px;
 padding-right: 10px;
-}
-
-#pulseaudio {
-padding-left: 10px;
-padding-right: 10px;
-border-radius: 20px;
-font-weight: bold;
-transition: none;
-color: @background;
-background: @color6;
 }
 
 #tray {
@@ -110,43 +105,13 @@ color: @background;
 background: transparent;
 }
 
-#network {
-padding-left: 10px;
-padding-right: 10px;
-border-radius: 20px;
-color: @background;
-background: @color6;
-}
-
-#clock {
-padding-left: 10px;
-padding-right: 10px;
-border-radius: 20px;
-transition: none;
-font-weight: bold;
-color: @background;
-background: @color6;
-}
-
 #custom-power {
-/* margin: 0px 5px 0px 5px; */
+margin: 0px 5px 0px 0px;
 padding-left: 10px;
 padding-right: 14px;
-border-radius: 0px;
+border-radius: 10px;
 transition: none;
 font-weight: bold;
 color: @background;
-background: @color6;
-}
-
-#custom-space {
-margin-left: 8px;
-padding-left: 10px;
-padding-right: 10px;
-margin-right: 8px;
-border-radius: 18px;
-transition: none;
-font-weight: bold;
-color: @background;
-background: @color6;
+background: @color7;
 }

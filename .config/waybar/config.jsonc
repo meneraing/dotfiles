@@ -43,7 +43,7 @@
     "clock": {
         "timezone": "America/Argentina/Cordoba",
         "format": "{:%H:%M}",
-        "format-alt": "{:%A  |  %H:%M  | %e %B}",
+        "format-alt": "{:%A | %H:%M | %e %B}",
         "tooltip": false
         //"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
@@ -91,10 +91,5 @@
       "format" : "⏻",
       "tooltip": false,
       "on-click": "wlogout"
-    },
-    "custom/space": {
-        "format": " ",
-        "interval" : "once",
-        "tooltip": false
     }
 }
