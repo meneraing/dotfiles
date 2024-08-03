@@ -71,3 +71,8 @@ eval "$(fzf --zsh)"
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
 bindkey "^[[3~" delete-char
+
+# NVIDIA Raytracing envs
+export VKD3D_CONFIG=dxr11,dxr
+export PROTON_ENABLE_NVAPI=1
+export PROTON_ENABLE_NGX_UPDATER=1
