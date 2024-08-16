@@ -59,10 +59,11 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
-alias ls='ls --color'
-alias c='clear'
+alias ls="ls --color=always --group-directories-first"
+alias ll="ls -lah --color=always --group-directories-first"
 alias files="cd /mnt/Files/"
 alias games="cd /mnt/Games/"
+alias empty-trash="rm -r ~/.local/share/Trash/*"
 
 # Shell integrations
 eval "$(fzf --zsh)"
@@ -72,7 +73,17 @@ bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
 bindkey "^[[3~" delete-char
 
-# NVIDIA Raytracing envs
-export VKD3D_CONFIG=dxr11,dxr
-export PROTON_ENABLE_NVAPI=1
-export PROTON_ENABLE_NGX_UPDATER=1
+# Environment variables
+# Enable Wayland support for different applications
+if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+    export WAYLAND=1
+    export QT_QPA_PLATFORM='wayland;xcb'
+    export GDK_BACKEND='wayland,x11'
+    export MOZ_DBUS_REMOTE=1
+    export MOZ_ENABLE_WAYLAND=1
+    export _JAVA_AWT_WM_NONREPARENTING=1
+    export BEMENU_BACKEND=wayland
+    export CLUTTER_BACKEND=wayland
+    export ECORE_EVAS_ENGINE=wayland_egl
+    export ELM_ENGINE=wayland_egl
+fi
