@@ -35,12 +35,30 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-# Set background image
-exec --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/samurai-girl-dragon-back-tattoo-anime-girl.jpg
-# Start polybar
-exec_always --no-startup-id polybar
+# Start authentication agent
+exec --no-startup-id /usr/lib/xfce-polkit/xfce-polkit
 
-# Start clipboard manager
+# Set default resolution and refresh rate
+exec --no-startup-id "xrandr --output DP-4 --mode 2560x1440 --rate 165.00"
+
+# Set default style for windows
+# No title bar, only border
+default_border pixel
+default_floating_border pixel
+
+# Set background image and colorscheme
+exec --no-startup-id ~/.config/i3/random_bg.sh 
+
+# Start polybar
+exec --no-startup-id polybar
+
+# Start picom (compositor)
+exec --no-startup-id picom -b --config ~/.config/picom/picom.conf
+
+# Start dunst (notification daemon)
+exec --no-starup-id dunst
+
+# Start clipboard manager daemon
 exec --no-startup-id clipse -listen
 bindsym --release $mod+Mod1+v exec --no-startup-id "kitty --class clipse -e 'clipse'"
 for_window [class="clipse"] floating enable, border pixel, resize set 680 620
