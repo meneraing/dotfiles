@@ -56,7 +56,7 @@ exec --no-startup-id polybar
 exec --no-startup-id picom -b --config ~/.config/picom/picom.conf
 
 # Start dunst (notification daemon)
-exec --no-starup-id dunst
+exec --no-startup-id dunst
 
 # Start clipboard manager daemon
 exec --no-startup-id clipse -listen
