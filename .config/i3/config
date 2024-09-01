@@ -39,14 +39,15 @@ exec --no-startup-id nm-applet
 exec --no-startup-id /usr/lib/xfce-polkit/xfce-polkit
 
 # Set default resolution and refresh rate
-exec --no-startup-id "xrandr --output DP-4 --mode 2560x1440 --rate 165.00"
+#exec --no-startup-id "xrandr --output DP-4 --mode 2560x1440 --rate 165.00"
 
 # Set default style for windows
 # No title bar, no border
-default_border pixel
+default_border none
 default_floating_border none
 gaps inner 0
 gaps outer 0
+focus_follows_mouse yes
 
 # Set background image and colorscheme
 exec --no-startup-id ~/.config/i3/random_bg.sh 
@@ -72,6 +73,9 @@ bindsym XF86AudioLowerVolume exec --no-startup-id wpctl set-volume @DEFAULT_AUDI
 bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause && $refresh_i3status
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous && $refresh_i3status
 bindsym XF86AudioNext exec --no-startup-id playerctl next && $refresh_i3status
+
+# Spotify rules
+for_window [class="Spotify"] move container to workspace 10
 
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
