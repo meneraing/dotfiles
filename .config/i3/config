@@ -42,9 +42,11 @@ exec --no-startup-id /usr/lib/xfce-polkit/xfce-polkit
 exec --no-startup-id "xrandr --output DP-4 --mode 2560x1440 --rate 165.00"
 
 # Set default style for windows
-# No title bar, only border
+# No title bar, no border
 default_border pixel
-default_floating_border pixel
+default_floating_border none
+gaps inner 0
+gaps outer 0
 
 # Set background image and colorscheme
 exec --no-startup-id ~/.config/i3/random_bg.sh 
@@ -221,10 +223,10 @@ mode "resize" {
         bindsym $right      resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left        resize shrink width 10 px or 10 ppt
-        bindsym Down        resize grow height 10 px or 10 ppt
-        bindsym Up          resize shrink height 10 px or 10 ppt
-        bindsym Right       resize grow width 10 px or 10 ppt
+        bindsym Left        resize shrink width 10 px or 5 ppt
+        bindsym Down        resize grow height 10 px or 5 ppt
+        bindsym Up          resize shrink height 10 px or 5 ppt
+        bindsym Right       resize grow width 10 px or 5 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
@@ -234,20 +236,20 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-# bar {
-#         status_command i3status
-# }
+# Set colors from Xresources
+# Change 'color7' and 'color2' to whatever colors you want i3 to use 
+# from the generated scheme.
+# NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
+# it fails to get colors from Xresources.
+set_from_resource $fg i3wm.color7 #f0f0f0
+set_from_resource $bg i3wm.color2 #f0f0f0
 
-#######################################################################
-# automatically start i3-config-wizard to offer the user to create a
-# keysym-based config which used their favorite modifier (alt or windows)
-#
-# i3-config-wizard will not launch if there already is a config file
-# in ~/.config/i3/config (or $XDG_CONFIG_HOME/i3/config if set) or
-# ~/.i3/config.
-#
-# Please remove the following exec line:
-#######################################################################
-#exec i3-config-wizard
+# class                 border  backgr. text indicator child_border
+client.focused          $bg     $bg     $fg  $bg       $bg
+client.focused_inactive $fg     $bg     $fg  $bg       $bg
+client.unfocused        $fg     $bg     $fg  $bg       $bg
+client.urgent           $bg     $bg     $fg  $bg       $bg
+client.placeholder      $bg     $bg     $fg  $bg       $bg
+
+client.background       $bg
+
