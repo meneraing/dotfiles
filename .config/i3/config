@@ -104,6 +104,7 @@ bindsym $mod+m exec "rofi -show drun -replace"
 bindsym $mod+g exec "rofi -modi games -show games -theme games-smaller"
 # Open firefox
 bindsym $mod+b exec firefox
+bindsym $mod+p exec firefox -private-window
 # Screenshots
 # Full screen and save to ~/Pictures/
 bindsym --release Print exec "import -window root ~/Pictures/screenshot_`date +%Y-%m-%d_%Hh%Mm%Ss`.png"

@@ -41,3 +41,10 @@ then use GNU stow to create symlinks
 ```
 $ stow .
 ```
+
+## Credits
+
+- Rofi powermenu taken from: https://github.com/adi1090x/rofi and https://github.com/2SSK/dot-files
+
+- Random wallpaper setting script adapted from: https://gist.github.com/mcnaveen/ec639eacf4c84f3324c8b90704bf9365
+
