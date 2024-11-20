@@ -27,8 +27,6 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
 
 # Add in snippets
-zinit snippet OMZP::git
-zinit snippet OMZP::archlinux
 zinit snippet OMZP::command-not-found
 
 # Load completions
@@ -64,6 +62,8 @@ alias ll="ls -lah --color=always --group-directories-first"
 alias files="cd /mnt/Files/"
 alias games="cd /mnt/Games/"
 alias empty-trash="rm -r ~/.local/share/Trash/*"
+alias conda_base="source ~/miniconda3/bin/activate"
+alias ai-env="conda_base; cd /mnt/Files/AI; conda activate ./env"
 
 # Shell integrations
 eval "$(fzf --zsh)"

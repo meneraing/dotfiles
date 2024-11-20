@@ -10,11 +10,11 @@
     "reload_style_on_change": true,
     "gtk-layer-shell": true,
     // Choose the order of the modules
-    "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["hyprland/window"],
+    "modules-left": ["sway/workspaces"],
+    "modules-center": ["sway/window"],
     "modules-right": ["tray", "temperature", "pulseaudio", "clock", "custom/power"],
 
-    "hyprland/workspaces": {
+    "sway/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
         "warp-on-scroll": false,
@@ -32,7 +32,7 @@
         }
     },
 
-    "hyprland/window": {
+    "sway/window": {
         "format": "{title}",
         "separate-outputs": true
     },

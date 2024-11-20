@@ -1,4 +1,5 @@
 -- General nvim configs
+vim.cmd("set number")
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
@@ -9,7 +10,8 @@ vim.g.mapleader = " "
 require("config.lazy")
 
 -- Set colorscheme
-vim.cmd.colorscheme "catppuccin"
+--vim.cmd.colorscheme "catppuccin"
+vim.cmd.colorscheme "gruvbox"
 
 -- Configure telescope
 local builtin = require("telescope.builtin")
