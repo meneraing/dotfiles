@@ -64,7 +64,15 @@ alias games="cd /mnt/Games/"
 alias empty-trash="rm -r ~/.local/share/Trash/*"
 alias conda_base="source ~/miniconda3/bin/activate"
 alias ai-env="conda_base; cd /mnt/Files/AI; conda activate ./env"
-
+# Yazi shell wrapper
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
 # Shell integrations
 eval "$(fzf --zsh)"
 

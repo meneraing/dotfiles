@@ -12,7 +12,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces"],
     "modules-center": ["sway/window"],
-    "modules-right": ["tray", "temperature", "pulseaudio", "clock", "custom/power"],
+    "modules-right": ["tray", "temperature", "pulseaudio", "network", "clock", "custom/power"],
 
     "sway/workspaces": {
         "disable-scroll": true,
