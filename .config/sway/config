@@ -47,7 +47,7 @@ output DP-3 mode 2560x1440@165Hz adaptive_sync off allow_tearing yes
 # Example configuration:
 #
 exec swayidle -w \
-         timeout 600 'swaylock -f -c 000000' \
+         timeout 300 'swaylock -f -c 000000' \
          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
          before-sleep 'swaylock -f -c 000000'
 #
@@ -69,6 +69,8 @@ bindsym $mod+Mod1+v exec $term -e sh -c "swaymsg floating enable, move position 
 # Waypaper
 exec --no-startup-id waypaper --random
 
+# Bluetooth applet
+exec --no-startup-id blueman-applet
 ### Input configuration
 #
 # Example configuration:
@@ -246,11 +248,11 @@ bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 
 # Fullscreen screenshot and save to ~/Pictures/
-bindsym --release Print exec grim
+bindsym Print exec grim
 # Area screenshot and save to ~/Pictures/
-bindsym --release Control+Print exec grim -g "$(slurp)"
+bindsym Control+Print exec grim -g "$(slurp)"
 # Area screenshot and copy to clipboard
-bindsym --release Shift+Print exec grim -g "$(slurp -d)" - | wl-copy
+bindsym Shift+Print exec grim -g "$(slurp -d)" - | wl-copy
 
 # Open browser
 bindsym $mod+b exec $browser
