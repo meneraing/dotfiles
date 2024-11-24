@@ -82,3 +82,4 @@ bindkey "^[[F" end-of-line
 bindkey "^[[3~" delete-char
 
 # Environment variables
+export EDITOR=nvim

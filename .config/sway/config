@@ -19,7 +19,6 @@ set $mod Mod4
 set $term kitty
 # Your preferred application launcher
 set $menu rofi -show drun -replace
-set $fileManager dolphin
 set $browser cachy-browser
 
 # Set default style for windows
@@ -50,10 +49,12 @@ exec swayidle -w \
          timeout 300 'swaylock -f -c 000000' \
          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
          before-sleep 'swaylock -f -c 000000'
-#
+
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
+
+for_window [class="vlc"] inhibit_idle fullscreen
 
 ### Start programs
 # Polkit auth agent
@@ -72,19 +73,6 @@ exec --no-startup-id waypaper --random
 # Bluetooth applet
 exec --no-startup-id blueman-applet
 ### Input configuration
-#
-# Example configuration:
-#
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
-#
-# You can get the names of your inputs by running: swaymsg -t get_inputs
-# Read `man 5 sway-input` for more information about this section.
-
 # Set keyboard layout
 input "type:keyboard" {
     xkb_layout latam
@@ -124,22 +112,12 @@ input "type:pointer" {
 # Moving around:
 #
     # Move your focus around
-    #bindsym $mod+$left focus left
-    #bindsym $mod+$down focus down
-    #bindsym $mod+$up focus up
-    #bindsym $mod+$right focus right
-    # Or use $mod+[up|down|left|right]
     bindsym $mod+Left focus left
     bindsym $mod+Down focus down
     bindsym $mod+Up focus up
     bindsym $mod+Right focus right
 
     # Move the focused window with the same, but add Shift
-    #bindsym $mod+Shift+$left move left
-    #bindsym $mod+Shift+$down move down
-    #bindsym $mod+Shift+$up move up
-    #bindsym $mod+Shift+$right move right
-    # Ditto, with arrow keys
     bindsym $mod+Shift+Left move left
     bindsym $mod+Shift+Down move down
     bindsym $mod+Shift+Up move up
@@ -212,16 +190,6 @@ input "type:pointer" {
 # Resizing containers:
 #
 mode "resize" {
-    # left will shrink the containers width
-    # right will grow the containers width
-    # up will shrink the containers height
-    # down will grow the containers height
-    #bindsym $left resize shrink width 10px
-    #bindsym $down resize grow height 10px
-    #bindsym $up resize shrink height 10px
-    #bindsym $right resize grow width 10px
-
-    # Ditto, with arrow keys
     bindsym Left resize shrink width 10px
     bindsym Down resize grow height 10px
     bindsym Up resize shrink height 10px
@@ -256,7 +224,13 @@ bindsym Shift+Print exec grim -g "$(slurp -d)" - | wl-copy
 
 # Open browser
 bindsym $mod+b exec $browser
+bindsym $mod+p exec $browser -private-window
 
+# wlogout
+bindsym $mod+l exec wlogout
+
+# File explorer
+bindsym $mod+n exec yazi
 # Spotify rules
 for_window [class="Spotify"] move container to workspace 10
 
