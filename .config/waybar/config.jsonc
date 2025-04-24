@@ -16,6 +16,7 @@
     "tray",
     "temperature",
     "pulseaudio",
+    "custom/brightness",
     "network",
     "clock",
     "custom/power",
@@ -73,11 +74,14 @@
   "network": {
     // "interface": "wlp2*", // (Optional) To force the use of this interface
     "interval": 3,
-    "format": "  {bandwidthDownBytes}    {bandwidthUpBytes}",
-    "tooltip": false,
+    "tooltip": true,
+    "tooltip-format": "{ipaddr}/{cidr} via {gwaddr}",
+    "format": "{icon} {essid}",
+    "format-alt": "  {bandwidthDownBytes}    {bandwidthUpBytes}",
     "format-linked": "󰤭  {ifname} | No IP",
-    "format-disconnected": "󰤭  Disconnected",
-    "format-alt": "{icon} {essid}",
+    "format-ethernet": "{ifname} 󰈀",
+    "format-disconnected": "", //An empty format will hide the module.
+    //"format-disconnected": "󰤭  Disconnected",
     "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
   },
   "pulseaudio": {
@@ -93,6 +97,18 @@
       "default": ["", "", ""],
     },
     "on-click": "pavucontrol",
+  },
+  "custom/brightness": {
+    "format": "{icon} {percentage}%",
+    "format-icons": ["\uDB80\uDCDE", "\uDB80\uDCDF", "\uDB80\uDCE0"],
+    "return-type": "json",
+    "exec": "~/.config/waybar/brightness.sh",
+    "on-scroll-up": "ddcutil --bus 6 setvcp 10 + 5; ~/.config/waybar/brightness.sh", 
+    "on-scroll-down": "ddcutil --bus 6 setvcp 10 - 5; ~/.config/waybar/brightness.sh", 
+    "on-click": "ddcutil --bus 6 setvcp 10 0; ~/.config/waybar/brightness.sh", 
+    "on-click-right": "ddcutil --bus 6 setvcp 10 100; ~/.config/waybar/brightness.sh", 
+    "interval": "once",
+    "tooltip": false,
   },
   "custom/power": {
     "format": " ",

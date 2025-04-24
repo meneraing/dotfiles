@@ -11,7 +11,7 @@
 window#waybar {
   transition-duration: 0.2s;
   transition-property: background-color;
-  background: alpha(@background, 0.3);
+  background: alpha(@background, 0.5);
   color: #ffffff;
 }
 
@@ -80,6 +80,7 @@ button:hover {
 #network,
 #clock,
 #tray,
+#custom-brightness,
 #custom-power {
   padding: 0px 10px;
   background-color: alpha(@color0, 0.3);

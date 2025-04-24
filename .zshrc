@@ -62,8 +62,11 @@ alias ll="ls -lah --color=always --group-directories-first"
 alias files="cd /mnt/Files/"
 alias games="cd /mnt/Games/"
 alias empty-trash="rm -r ~/.local/share/Trash/*"
-alias conda_base="source ~/miniconda3/bin/activate"
-alias ai-env="conda_base; cd /mnt/Files/AI; conda activate ./env"
+alias ai-env="cd /mnt/Files/AI; source env/bin/activate"
+alias comfyui="ai-env; python ComfyUI/main.py; deactivate"
+alias mcelu="jmtpfs ~/mtp"
+alias ucelu="fusermount3 -u ~/mtp"
+
 # Yazi shell wrapper
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
@@ -73,6 +76,7 @@ function y() {
 	fi
 	rm -f -- "$tmp"
 }
+
 # Shell integrations
 eval "$(fzf --zsh)"
 

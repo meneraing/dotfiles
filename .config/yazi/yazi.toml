@@ -6,5 +6,5 @@ image_delay = 0
 
 [opener]
 play = [
-  { run = 'vlc "$0"', block = false, for = "linux" },
+  { run = 'mpv "$0"', block = false, for = "linux" },
 ]
