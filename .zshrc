@@ -27,8 +27,6 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
 
 # Add in snippets
-zinit snippet OMZP::git
-zinit snippet OMZP::archlinux
 zinit snippet OMZP::command-not-found
 
 # Load completions
@@ -64,6 +62,20 @@ alias ll="ls -lah --color=always --group-directories-first"
 alias files="cd /mnt/Files/"
 alias games="cd /mnt/Games/"
 alias empty-trash="rm -r ~/.local/share/Trash/*"
+alias ai-env="cd /mnt/Files/AI; source env/bin/activate"
+alias comfyui="ai-env; python ComfyUI/main.py; deactivate"
+alias mcelu="jmtpfs ~/mtp"
+alias ucelu="fusermount3 -u ~/mtp"
+
+# Yazi shell wrapper
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
 
 # Shell integrations
 eval "$(fzf --zsh)"
@@ -74,16 +86,5 @@ bindkey "^[[F" end-of-line
 bindkey "^[[3~" delete-char
 
 # Environment variables
-# Enable Wayland support for different applications
-if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
-    export WAYLAND=1
-    export QT_QPA_PLATFORM='wayland;xcb'
-    export GDK_BACKEND='wayland,x11'
-    export MOZ_DBUS_REMOTE=1
-    export MOZ_ENABLE_WAYLAND=1
-    export _JAVA_AWT_WM_NONREPARENTING=1
-    export BEMENU_BACKEND=wayland
-    export CLUTTER_BACKEND=wayland
-    export ECORE_EVAS_ENGINE=wayland_egl
-    export ELM_ENGINE=wayland_egl
-fi
+export EDITOR=nvim
+
