@@ -56,17 +56,6 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
-# Aliases
-alias ls="ls --color=always --group-directories-first"
-alias ll="ls -lah --color=always --group-directories-first"
-alias files="cd /mnt/Files/"
-alias games="cd /mnt/Games/"
-alias empty-trash="rm -r ~/.local/share/Trash/*"
-alias ai-env="cd /mnt/Files/AI; source env/bin/activate"
-alias comfyui="ai-env; python ComfyUI/main.py; deactivate"
-alias mcelu="jmtpfs ~/mtp"
-alias ucelu="fusermount3 -u ~/mtp"
-
 # Yazi shell wrapper
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
@@ -88,3 +77,13 @@ bindkey "^[[3~" delete-char
 # Environment variables
 export EDITOR=nvim
 
+# Aliases
+alias ls="ls --color=always --group-directories-first"
+alias ll="ls -lah --color=always --group-directories-first"
+alias files="cd /mnt/Files/"
+alias games="cd /mnt/Games/"
+alias empty-trash="rm -r ~/.local/share/Trash/*"
+alias ai-env="cd /mnt/Files/AI; source env/bin/activate"
+alias comfyui="ai-env; python ComfyUI/main.py; deactivate"
+alias mcelu="jmtpfs ~/mtp"
+alias ucelu="fusermount3 -u ~/mtp"
