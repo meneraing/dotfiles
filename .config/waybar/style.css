@@ -4,89 +4,131 @@
 * {
 border: none;
 font-family: "JetBrainsMono Nerd Font";
-font-weight: bold;
-font-size: 14px;
 }
 
 window#waybar {
-   background: alpha(@background, 0.3);
-/*   background-color: rgba(30, 30, 46, 0.5); */
-   border-radius: 0px;
+    background-color: rgba(0,0,0,0.3);
+    border-bottom: 0px solid #ffffff;
+    /* color: #FFFFFF; */
+    transition-property: background-color;
+    transition-duration: .5s;
 }
 
-window#waybar.empty #window {
-  background-color:transparent;
-}
-
-#window {
-padding-left: 10px;
-padding-right: 10px;
-border-radius: 0px;
-transition: none;
-background: alpha(@background, 0.1);
-color: lighter(@color7);
-}
-
-tooltip {
-  background: @color7;
-  color: @color0;
-  border-radius: 10px;
-  border-width: 2px;
-  border-style: solid;
-  border-color: @color6;
-}
-
-tooltip label {
-  font-size: 14px;
-  font-weight: bold;
-  color: @color0;
-}
+/* -----------------------------------------------------
+ * Workspaces
+ * ----------------------------------------------------- */
 
 #workspaces {
-margin: 0px 5px 0px 5px;
-border-radius: 10px;
-transition: none;
-padding-left: 0px;
-padding-right: 0px;
-background: @color7;
+    background: @workspacesbackground1;
+    margin: 2px 18px 3px 1px;
+    padding: 0px 2px;
+    border-radius: 5px 5px 5px 5px;
+    font-weight: bold;
+    font-style: normal;
+    opacity: 0.8;
+    color: @textcolor1;
 }
 
-/* Inactive workspace */
 #workspaces button {
-transition: none;
-color: @color8;
-background: transparent;
-}
-
-#workspaces button.persistent {
-transition: none;
-/* color: #aca1cf; */
-background: transparent;
-}
-
-#workspaces button.empty {
-transition: none;
-color: @color8;
-background: transparent;
+    padding: 0px 6px;
+    margin: 3px 2px;
+    border-radius: 3px 3px 3px 3px;
+    color: @textcolor1;
+    background-color: @workspacesbackground2;
+    transition: all 0.1s linear;
+    opacity: 0.4;
 }
 
 #workspaces button.active {
-transition: none;
-color: @color0;
-background: transparent;
+    color: @textcolor1;
+    background: @workspacesbackground2;
+    border-radius: 3px 3px 3px 3px;
+    min-width: 30px;
+    transition: all 0.1s linear;
+    opacity:1.0;
+}
+
+#workspaces button:hover {
+    color: @textcolor1;
+    background: @workspacesbackground2;
+    border-radius: 5px 5px 5px 5px;
+    opacity:0.7;
+}
+
+/* -----------------------------------------------------
+ * Tooltips
+ * ----------------------------------------------------- */
+
+tooltip {
+    border-radius: 16px;
+    background-color: @backgroundlight;
+    opacity:0.9;
+    padding:20px;
+    margin:0px;
+}
+
+tooltip label {
+    color: @textcolor2;
+}
+
+/* -----------------------------------------------------
+ * Window
+ * ----------------------------------------------------- */
+
+#window {
+    margin: 3px 15px 3px 0px;
+    padding: 2px 10px 0px 10px;
+    border-radius: 5px 5px 5px 5px;
+    color:white;
+    background: rgba(0,0,0,0.3);
+    font-size:16px;
+    font-weight:normal;
+    opacity:0.8;
+}
+
+window#waybar.empty #window {
+    background-color:transparent;
+}
+
+/* -----------------------------------------------------
+ * Taskbar
+ * ----------------------------------------------------- */
+
+#taskbar {
+    background: @backgroundlight;
+    margin: 3px 15px 3px 0px;
+    padding:0px;
+    border-radius: 5px 5px 5px 5px;
+    font-weight: normal;
+    font-style: normal;
+    opacity:0.8;
+    border: 3px solid @backgroundlight;
+}
+
+#taskbar button {
+    margin:0;
+    border-radius: 5px 5px 5px 5px;
+    padding: 0px 5px 0px 5px;
+}
+
+#taskbar.empty {
+    background:transparent;
+    border:0;
+    padding:0;
+    margin:0;
 }
 
 #temperature,
 #pulseaudio,
 #network,
 #clock {
-transition: none;
-font-weight: bold;
-padding-left: 10px;
-padding-right: 10px;
-border-radius: 10px;
-color: @background;
-background: @color7;
+    background-color: @color11;
+    font-size: 16px;
+    color: @textcolor1;
+    border-radius: 3px 5px 3px 5px;
+    padding: 1px 10px 0px 10px;
+    margin: 3px 0px 3px 0px;
+    opacity:0.8;
 }
 
 #temperature.critical {
@@ -106,12 +148,11 @@ background: transparent;
 }
 
 #custom-power {
-margin: 0px 5px 0px 0px;
-padding-left: 10px;
-padding-right: 14px;
-border-radius: 10px;
-transition: none;
-font-weight: bold;
-color: @background;
-background: @color7;
+    background-color: @color11;
+    font-size: 16px;
+    color: @textcolor1;
+    border-radius: 3px 5px 3px 5px;
+    padding: 1px 10px 0px 10px;
+    margin: 3px 0px 3px 0px;
+    opacity:0.8;
 }
