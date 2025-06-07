@@ -1,11 +1,14 @@
 -- lazy.nvim package manager
 require("config.lazy")
 
+-- neovim options
+require("config.options")
+
 -- keybindings
 require("config.mappings")
 
--- neovim options
-require("config.options")
+-- auto commands
+require("config.autocmd")
 
 -- set gruvbox theme
 vim.cmd.colorscheme "gruvbox"
