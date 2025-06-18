@@ -11,9 +11,11 @@ return {
       lua = {'luac'},
       python = {'pylint'},
       sh = {'bash'},
-      c = {'cppcheck'},
+      c = {'cpplint'},
       rust = {'clippy'},
       css = {'stylelint'},
     }
+    lint.linters.pylint.cmd = 'python'
+    lint.linters.pylint.args = {'-m', 'pylint', '-f', 'json'}
   end,
 }

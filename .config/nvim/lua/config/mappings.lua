@@ -1,18 +1,13 @@
 -- mappings, including plugins
 
-local function map(m, k, v)
-	vim.keymap.set(m, k, v, { noremap = true, silent = true })
+local function map(m, k, v, d)
+	vim.keymap.set(m, k, v, { desc = d, noremap = true, silent = true })
 end
 
 -- fzf and grep
-map("n", "<leader>f", ":lua require('fzf-lua').files()<CR>") --search cwd
-map("n", "<leader>Fh", ":lua require('fzf-lua').files({ cwd = '~/' })<CR>") --search home
-map("n", "<leader>Fc", ":lua require('fzf-lua').files({ cwd = '~/.config' })<CR>") --search .config
-map("n", "<leader>Fl", ":lua require('fzf-lua').files({ cwd = '~/.local/src' })<CR>") --search .local/src
-map("n", "<leader>Ff", ":lua require('fzf-lua').files({ cwd = '..' })<CR>") --search above
-map("n", "<leader>Fr", ":lua require('fzf-lua').resume()<CR>") --last search
-map("n", "<leader>g", ":lua require('fzf-lua').grep()<CR>") --grep
-map("n", "<leader>G", ":lua require('fzf-lua').grep_cword()<CR>") --grep word under cursor
+map("n", "<leader>ff", ":FzfLua files", "Fuzzy find files") --search cwd
+map("n", "<leader>g", ":FzfLua live_grep", "Live grep current project") --grep
+map("n", "<leader>G", ":FzfLua grep_cword", "Search word under cursor") --grep word under cursor
 
 -- buffers
 map("n", "<S-l>", ":bnext<CR>")
@@ -52,4 +47,4 @@ map({"n", "v"}, "<leader>ft", function() -- formatter
     async = false,
     timeout_ms = 500,
   })
-end, {desc = "Format file or range (in visual mode)"})
+end, "Format file or range (in visual mode)")
