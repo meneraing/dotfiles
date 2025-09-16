@@ -5,9 +5,10 @@ local function map(m, k, v, d)
 end
 
 -- fzf and grep
-map("n", "<leader>ff", ":FzfLua files", "Fuzzy find files") --search cwd
-map("n", "<leader>g", ":FzfLua live_grep", "Live grep current project") --grep
-map("n", "<leader>G", ":FzfLua grep_cword", "Search word under cursor") --grep word under cursor
+map("n", "<leader>ff", ":FzfLua files<CR>", "Fuzzy find files") --search cwd
+map("n", "<leader>fh", ":FzfLua files cwd=~/<CR>", "Fuzzy find files") --search cwd
+map("n", "<leader>g", ":FzfLua live_grep<CR>", "Live grep current project") --grep
+map("n", "<leader>G", ":FzfLua grep_cword<CR>", "Search word under cursor") --grep word under cursor
 
 -- buffers
 map("n", "<S-l>", ":bnext<CR>")
@@ -31,6 +32,16 @@ map('n', '<A-8>', '<Cmd>BufferGoto 8<CR>')
 map('n', '<A-9>', '<Cmd>BufferGoto 9<CR>')
 map('n', '<A-0>', '<Cmd>BufferLast<CR>')
 map('n', '<A-p>', '<Cmd>BufferPin<CR>')
+
+-- window navigation
+map("n", "<A-h>", "<C-w>h", "Move focus to window on the left")
+map("n", "<A-j>", "<C-w>j", "Move focus to window below")
+map("n", "<A-k>", "<C-w>k", "Move focus to window above")
+map("n", "<A-l>", "<C-w>l", "Move focus to window on the right")
+
+-- misc
+map("n", "<C-s>", ":w<CR>", "Save buffer")
+
 
 map("n", "<leader>nn", function() --toggle relative vs absolute line numbers
 	if vim.wo.relativenumber then
