@@ -41,6 +41,7 @@ map("n", "<A-l>", "<C-w>l", "Move focus to window on the right")
 
 -- misc
 map("n", "<C-s>", ":w<CR>", "Save buffer")
+map("n", "<leader>t", "<Cmd>Yazi<CR>", "Yazi (Current File)")
 
 
 map("n", "<leader>nn", function() --toggle relative vs absolute line numbers
@@ -52,10 +53,3 @@ map("n", "<leader>nn", function() --toggle relative vs absolute line numbers
 	end
 end)
 
-map({"n", "v"}, "<leader>ft", function() -- formatter
-  require("conform").format({
-    lsp_fallback = true,
-    async = false,
-    timeout_ms = 500,
-  })
-end, "Format file or range (in visual mode)")
