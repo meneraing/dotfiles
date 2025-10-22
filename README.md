@@ -21,10 +21,10 @@ sudo pacman -S stow
 ### Other packages
 
 ```
-sudo pacman -S hyprland waybar wlogout alacritty wl-clipboard sddm thunar swww pkgfile
+sudo pacman -S sway waybar wlogout kitty wl-clipboard swaylock wbg
 ```
 ```
-paru -S waypaper clipse
+paru -S clipse
 ```
 
 ## Installation
