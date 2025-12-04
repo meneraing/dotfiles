@@ -84,7 +84,12 @@ alias files="cd /mnt/Files/"
 alias games="cd /mnt/Games/"
 alias empty-trash="rm -r ~/.local/share/Trash/*"
 alias ai-env="cd /mnt/Games/ai; source env/bin/activate"
-alias comfyui="ai-env; python ComfyUI/main.py; deactivate"
+alias comfyui="~/comfyui.sh"
 alias comfyui-lan="ai-env; python ComfyUI/main.py --listen; deactivate"
 alias mcelu="jmtpfs ~/mtp"
 alias ucelu="fusermount3 -u ~/mtp"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/gino/.lmstudio/bin"
+# End of LM Studio CLI section
+

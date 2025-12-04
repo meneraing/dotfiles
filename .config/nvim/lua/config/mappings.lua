@@ -51,11 +51,3 @@ map("n", "<leader>nn", function() --toggle relative vs absolute line numbers
 		vim.wo.relativenumber = true
 	end
 end)
-
-map({"n", "v"}, "<leader>ft", function() -- formatter
-  require("conform").format({
-    lsp_fallback = true,
-    async = false,
-    timeout_ms = 500,
-  })
-end, "Format file or range (in visual mode)")

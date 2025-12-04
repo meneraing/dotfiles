@@ -1,9 +1,7 @@
 return {
 	"mikavilpas/yazi.nvim",
 	keys = {
-		{ "<leader>e", "<cmd>Yazi<cr>", desc = "Yazi (Current File)" },
-		{ "<leader>E", "<cmd>Yazi cwd<cr>", desc = "Yazi (cwd)" },
-		{ "<a-e>", "<cmd>Yazi toggle<cr>", desc = "Resume Last Yazi Session" },
+		{ "<leader>t", "<cmd>Yazi<cr>", desc = "Yazi (Current File)" },
 	},
 	opts = {
 		open_for_directories = false,

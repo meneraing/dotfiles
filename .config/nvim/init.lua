@@ -11,4 +11,4 @@ require("config.mappings")
 require("config.autocmd")
 
 -- set gruvbox theme
-vim.cmd.colorscheme "gruvbox"
+vim.cmd.colorscheme "gruvbox-material"
